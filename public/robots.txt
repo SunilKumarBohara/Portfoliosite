@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sunilkumarbohara.com.np/sitemap.xml
