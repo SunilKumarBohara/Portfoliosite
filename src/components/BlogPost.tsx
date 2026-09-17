@@ -33,7 +33,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({ slug }) => {
       el.setAttribute("content", content);
     };
 
-    const postUrl = `${SITE_CONFIG.url}/blog/${post.slug}`;
+    const postUrl = `${SITE_CONFIG.url}/#blog/${post.slug}`;
 
     setMeta("description", post.metaDescription);
     setMeta("keywords", post.tags.join(", "));
@@ -98,7 +98,6 @@ export const BlogPost: React.FC<BlogPostProps> = ({ slug }) => {
     return () => {
       // Restore original title when leaving post
       document.title = SITE_CONFIG.title;
-      if (canonical) canonical.setAttribute("href", `${SITE_CONFIG.url}/`);
       const s = document.getElementById(schemaId);
       if (s) s.remove();
     };

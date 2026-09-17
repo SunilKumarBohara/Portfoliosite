@@ -25,7 +25,7 @@ export const BlogPage: React.FC = () => {
       el.setAttribute("content", content);
     };
 
-    const blogUrl = `${SITE_CONFIG.url}/blog`;
+    const blogUrl = `${SITE_CONFIG.url}/#blog`;
     const blogDescription = "In-depth SEO guides, technical audit checklists, and keyword research strategies by SEO Executive Sunil Kumar Bohara.";
 
     setMeta("description", blogDescription);
@@ -35,17 +35,8 @@ export const BlogPage: React.FC = () => {
     setMeta("twitter:title", `SEO Blog & Guides | ${SITE_CONFIG.name}`);
     setMeta("twitter:description", blogDescription);
 
-    let canonical = document.querySelector<HTMLLinkElement>("link[rel='canonical']");
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute("href", blogUrl);
-
     return () => {
       document.title = originalTitle;
-      if (canonical) canonical.setAttribute("href", `${SITE_CONFIG.url}/`);
     };
   }, []);
 
