@@ -1,33 +1,71 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- 1. Homepage: Sunil Kumar Bohara | SEO Executive Portfolio -->
   <url>
     <loc>https://sunilkumarbohara.com.np/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://sunilkumarbohara.com.np/avatar.jpg</image:loc>
+      <image:title>Sunil Kumar Bohara - SEO Executive in Kathmandu, Nepal</image:title>
+      <image:caption>Sunil Kumar Bohara, SEO Executive specializing in Technical SEO, On-Page Optimization, and Organic Search Growth</image:caption>
+    </image:image>
   </url>
+
+  <!-- 2. Blog Hub: SEO Articles, Guides, and Checklists -->
   <url>
-    <loc>https://sunilkumarbohara.com.np/#blog</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://sunilkumarbohara.com.np/blog</loc>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://sunilkumarbohara.com.np/avatar.jpg</image:loc>
+      <image:title>Sunil Kumar Bohara - SEO Blog and Guides</image:title>
+      <image:caption>Comprehensive SEO guides, technical audit checklists, and organic growth strategies</image:caption>
+    </image:image>
   </url>
+
+  <!-- 3. Article: What Is SEO? A Beginner's Complete Guide -->
   <url>
-    <loc>https://sunilkumarbohara.com.np/#blog/what-is-seo-beginners-guide</loc>
+    <loc>https://sunilkumarbohara.com.np/blog/what-is-seo-beginners-guide</loc>
     <lastmod>2025-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1571786256017-aee7a0c009b6?q=80&amp;w=1200&amp;auto=format&amp;fit=crop</image:loc>
+      <image:title>What Is SEO? A Beginner's Complete Guide to Search Engine Optimization</image:title>
+      <image:caption>Search engine optimization analytics, rankings, and growth trajectory guide by Sunil Kumar Bohara</image:caption>
+    </image:image>
   </url>
+
+  <!-- 4. Article: Technical SEO Checklist for 2025 -->
   <url>
-    <loc>https://sunilkumarbohara.com.np/#blog/technical-seo-checklist-2025</loc>
+    <loc>https://sunilkumarbohara.com.np/blog/technical-seo-checklist-2025</loc>
     <lastmod>2025-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=1200&amp;auto=format&amp;fit=crop</image:loc>
+      <image:title>Technical SEO Checklist for 2025: What Every Website Must Get Right</image:title>
+      <image:caption>Technical SEO architecture, website speed performance and crawl audit checklist by Sunil Kumar Bohara</image:caption>
+    </image:image>
   </url>
+
+  <!-- 5. Article: Keyword Research in 2025: How to Find Keywords That Actually Drive Traffic -->
   <url>
-    <loc>https://sunilkumarbohara.com.np/#blog/keyword-research-guide-2025</loc>
+    <loc>https://sunilkumarbohara.com.np/blog/keyword-research-guide-2025</loc>
     <lastmod>2025-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=1200&amp;auto=format&amp;fit=crop</image:loc>
+      <image:title>Keyword Research in 2025: How to Find Keywords That Actually Drive Traffic</image:title>
+      <image:caption>Keyword research data analytics, search intent breakdown, and traffic opportunity analysis by Sunil Kumar Bohara</image:caption>
+    </image:image>
   </url>
+
 </urlset>

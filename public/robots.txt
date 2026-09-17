@@ -1,4 +1,66 @@
+﻿# ==============================================================================
+# Robots.txt for Sunil Kumar Bohara | SEO Executive
+# Website: https://sunilkumarbohara.com.np/
+# Role: SEO Executive • Kathmandu, Nepal
+# Optimization: Technical SEO & Crawl Budget Optimization
+# ==============================================================================
+
+# Default crawl rule for all legitimate crawlers
 User-agent: *
 Allow: /
+Allow: /blog
+Allow: /blog/*
+Allow: /assets/
+Allow: /avatar.jpg
+Allow: /favicon.svg
+Allow: /sitemap.xml
 
+# Allow essential web assets for search engine rendering & mobile testing
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Prevent indexing of server build scripts, raw files & temporary archives
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /*.json$
+Disallow: /*.ts$
+Disallow: /*.tsx$
+Disallow: /*.zip$
+Disallow: /*.log$
+Disallow: /.git/
+
+# Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /avatar.jpg
+Allow: /assets/
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.svg$
+Allow: /*.webp$
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Canonical XML Sitemap declaration
 Sitemap: https://sunilkumarbohara.com.np/sitemap.xml
+
+# Canonical Host
+Host: https://sunilkumarbohara.com.np

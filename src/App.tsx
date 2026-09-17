@@ -20,10 +20,23 @@ type RouteState =
   | { view: 'blog-list' }
   | { view: 'blog-post'; slug: string };
 
-function getHashRoute(): RouteState {
-  const hash = window.location.hash.replace('#', '');
+function getRoute(): RouteState {
+  // 1. Check pathname first (for clean SEO URLs like /blog, /blog/:slug)
+  const pathname = window.location.pathname.replace(/^\/+|\/+$/g, '');
+  if (pathname.startsWith('blog/')) {
+    const slug = pathname.replace('blog/', '').split('/')[0];
+    if (slug) {
+      return { view: 'blog-post', slug };
+    }
+  }
+  if (pathname === 'blog') {
+    return { view: 'blog-list' };
+  }
+
+  // 2. Check hash fallback (for hash navigation: #blog, #blog/:slug)
+  const hash = window.location.hash.replace(/^#\/?/, '');
   if (hash.startsWith('blog/')) {
-    const slug = hash.replace('blog/', '');
+    const slug = hash.replace('blog/', '').split('/')[0].split('?')[0];
     if (slug) {
       return { view: 'blog-post', slug };
     }
@@ -31,21 +44,22 @@ function getHashRoute(): RouteState {
   if (hash === 'blog' || hash.startsWith('blog?')) {
     return { view: 'blog-list' };
   }
+
   return { view: 'home' };
 }
 
 export const App: React.FC = () => {
-  const [route, setRoute] = useState<RouteState>(getHashRoute);
+  const [route, setRoute] = useState<RouteState>(getRoute);
 
   useEffect(() => {
-    const onHashChange = () => {
-      const newRoute = getHashRoute();
+    const onRouteChange = () => {
+      const newRoute = getRoute();
       setRoute(newRoute);
 
       // When returning to home with an anchor, scroll smoothly to that section
       if (newRoute.view === 'home') {
-        const hash = window.location.hash.replace('#', '');
-        if (hash && hash !== 'home') {
+        const hash = window.location.hash.replace(/^#\/?/, '');
+        if (hash && hash !== 'home' && !hash.startsWith('blog')) {
           setTimeout(() => {
             const el = document.getElementById(hash);
             if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -54,8 +68,12 @@ export const App: React.FC = () => {
       }
     };
 
-    window.addEventListener('hashchange', onHashChange);
-    return () => window.removeEventListener('hashchange', onHashChange);
+    window.addEventListener('hashchange', onRouteChange);
+    window.addEventListener('popstate', onRouteChange);
+    return () => {
+      window.removeEventListener('hashchange', onRouteChange);
+      window.removeEventListener('popstate', onRouteChange);
+    };
   }, []);
 
   return (
